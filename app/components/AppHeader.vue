@@ -1,8 +1,9 @@
 <template>
     <UHeader class="border-gray-700 flex items-center" mode="modal">
         <template #title>
-            <NuxtLink to="/home" class="text-lg font-semibold text-white hover:text-gray-300 transition-colors">
-                观影天下
+            <NuxtLink to="/home" class="flex items-center gap-2">
+                <img src="@/assets/images/logo.png" alt="观影天下" class="w-10 h-10 rounded-lg" />
+                <span class="text-lg font-semibold text-white hover:text-gray-300 transition-colors">观影天下</span>
             </NuxtLink>
         </template>
 
