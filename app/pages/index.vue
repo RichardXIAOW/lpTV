@@ -1,11 +1,13 @@
 <template>
     <div>
-        11
+        <!-- 重定向到 /home -->
     </div>
 </template>
 
 <script setup lang="ts">
-// Your code here
+definePageMeta({
+    redirect: { name: 'home' }
+})
 </script>
 
 <style lang="less" scoped>
