@@ -1,12 +1,17 @@
 <template>
-    <div>
-        <!-- 重定向到 /home -->
-    </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-    redirect: { name: 'home' }
+    layout: 'empty',
+})
+onMounted(() => {
+    const iphoneNumber = localStorage.getItem('iphoneNumber')
+    if (iphoneNumber) {
+        navigateTo('/home', { replace: true })
+    } else {
+        navigateTo('/login', { replace: true })
+    }
 })
 </script>
 

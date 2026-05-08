@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false,
+  // ssr: false,
 
   compatibilityDate: "2025-04-01",
 
@@ -12,6 +12,10 @@ export default defineNuxtConfig({
       meta: [{ name: "referrer", content: "no-referrer" }],
     },
   },
+
+  modules: ['@nuxt/ui'],
+
+  css: ['~/assets/css/main.css'],
 
   // 激进的缓存策略
   routeRules: {
