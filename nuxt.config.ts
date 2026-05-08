@@ -1,12 +1,21 @@
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  ssr: false,
+
+  compatibilityDate: "2025-04-01",
+
   nitro: {
-    preset: 'vercel', // 用 Serverless（稳定）
-    // preset: 'vercel-edge', // 想用 Edge 就开这个
+    compressPublicAssets: true,
   },
-  modules: [
-    '@nuxt/ui'
-  ],
-  css: ['~/assets/css/main.css'],
-})
+
+  app: {
+    head: {
+      meta: [{ name: "referrer", content: "no-referrer" }],
+    },
+  },
+
+  // 激进的缓存策略
+  routeRules: {
+    '/_nuxt/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+    '/assets/**': { headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } },
+  }
+}); 
